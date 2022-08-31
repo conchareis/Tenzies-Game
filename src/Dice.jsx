@@ -1,6 +1,7 @@
 export default function Dice(props) {
   const style = {
-    backgroundColor: props.isHeld ? "#59E391" : "white",
+    backgroundColor: props.isHeld ? "#7E7EA8" : "white",
+    color: props.isHeld ? "white" : "black",
   };
   return (
     <div className="dice-face" style={style} onClick={props.holdDice}>

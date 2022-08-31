@@ -3,6 +3,11 @@ import Dice from "./Dice";
 import { nanoid } from "nanoid";
 import Confetti from "react-confetti";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDice, faDiceFive } from "@fortawesome/free-solid-svg-icons";
+
+import Ghost from "./Ghost";
+
 export default function App() {
   const [dice, setDice] = React.useState(allNewDice());
 
@@ -84,24 +89,55 @@ export default function App() {
   ));
   // look at each individual Dice and return a Dice component (<Dice/>) with the value prop with the value of that dice
 
+  <h1>Hover me !</h1>;
+
   return (
-    <main>
-      {tenzies && <Confetti />}
-      <h1 className="title">Tenzies</h1>
-      <p className="instructions">
-        Roll until all dice are the same. Click each die to freeze it at its
-        current value between rolls.
-      </p>
-      <div className="dice-container">{diceElements}</div>
-      <button className="roll-dice" onClick={rollDice}>
-        {tenzies ? "New Game" : "Roll"}
-      </button>
-    </main>
+    <div className="up">
+      <div>
+        {tenzies && (
+          <Confetti
+            colors={[
+              "#E6CEAB",
+              "#ABE6D2",
+              "#ABE0E6",
+              "#C4E6AB",
+              "#ABE6BC",
+              "#E6ABB9",
+              "#E6ABDF",
+              "#CCABE6",
+              "#FFFFFF",
+              "#C4ABE1",
+              "#E5D9F5",
+              "#84848D",
+            ]}
+            numberOfPieces="1000"
+          />
+        )}
+        <main>
+          {/* {tenzies && <Confetti className="up" />} */}
+          <h1 className="title">
+            <FontAwesomeIcon
+              icon={faDice}
+              className="icon_left"
+            ></FontAwesomeIcon>
+            Tenzies{" "}
+            <FontAwesomeIcon
+              icon={faDiceFive}
+              className="icon_right"
+            ></FontAwesomeIcon>
+          </h1>
+
+          <p className="instructions">
+            Roll until all the dices have the same number. Click each dice to
+            freeze it at its current value between rolls.
+          </p>
+          <div className="dice-container">{diceElements}</div>
+          <button className="roll-dice" onClick={rollDice}>
+            {tenzies ? "New Game" : "Roll"}
+          </button>
+        </main>
+      </div>
+      <Ghost />
+    </div>
   );
 }
-
-//EXTRA CREDITS
-// CSS: put real dots on the dice container
-// track the number of rolls
-// track the time it took to win
-// save your best time to localStorage
