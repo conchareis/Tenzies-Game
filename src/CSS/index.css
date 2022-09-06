@@ -2,10 +2,11 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #4A4A97;
+  background-color: #4a4a97;
   font-family: Helvetica, Arial, sans-serif;
   padding: 20px;
   font-weight: 700;
+  position: relative;
   margin: auto;
   padding: 265px;
 }
@@ -68,8 +69,8 @@ p {
   width: 150px;
   border: none;
   border-radius: 6px;
-  background-color: #4A4A97;
-  background-image: linear-gradient(90deg, #B4B4E3, 0, #7E7EA8 35%, #4A4A97);
+  background-color: #4a4a97;
+  background-image: linear-gradient(90deg, #B4B4E3, 0, #7e7ea8 35%, #4a4a97);
   color: white;
   cursor: pointer;
   font-size: 1.2rem;
@@ -100,9 +101,9 @@ p {
   width: 250px;
   transition: 1s all ease-in-out;
   opacity: 0.8;
-  scale: 0.5;
+  transform: scale(0.5);
   bottom: 0px;
-  left: 100px;
+  left: 0vh;
 }
 .container_ghost:hover {
   opacity: 0.3;
@@ -126,7 +127,7 @@ p {
 }
 .ghost:before,
 .ghost:after {
-  content: '';
+  content: "";
   background: #f8f8ff;
   position: absolute;
   z-index: 10;
@@ -205,7 +206,7 @@ p {
   position: absolute;
 }
 .ghost .face .eye:before {
-  content: '';
+  content: "";
   width: 5px;
   height: 5px;
   border-radius: 50%;
@@ -233,7 +234,7 @@ p {
   bottom: 0;
 }
 .ghost .face .mouth:before {
-  content: '';
+  content: "";
   background: #f8f8ff;
   width: 48px;
   height: 40px;

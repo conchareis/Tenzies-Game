@@ -6,8 +6,6 @@ import Confetti from "react-confetti";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDice, faDiceFive } from "@fortawesome/free-solid-svg-icons";
 
-import Ghost from "./Ghost";
-
 export default function App() {
   const [dice, setDice] = React.useState(allNewDice());
 
@@ -137,7 +135,6 @@ export default function App() {
           </button>
         </main>
       </div>
-      <Ghost />
     </div>
   );
 }
